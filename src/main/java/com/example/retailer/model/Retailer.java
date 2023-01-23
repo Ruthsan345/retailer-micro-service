@@ -1,46 +1,68 @@
 package com.example.retailer.model;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+@Entity
 public class Retailer {
 
-    int retail_id;
-    String retail_name;
-    //    ArrayList<Product> retail_products =new ArrayList<Product>();
-    //  ArrayList<Wholesaler> retail_products =new ArrayList<Wholesaler>();
-    HashMap<Integer,ArrayList<Product> > retail_products=new HashMap<Integer,ArrayList<Product> >();
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public int id;
 
-   public Retailer(){}
-   public Retailer( int id, String name,HashMap<Integer,ArrayList<Product> > retailersList){
-        this.retail_id = id;
-        this.retail_name = name;
-//        this.retail_products = new ArrayList<Product>();
-        this.retail_products = new HashMap<Integer,ArrayList<Product> >();
-
+    public int getId() {
+        return id;
     }
 
-    public int getRetail_id() {
-        return retail_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setRetail_id(int retail_id) {
-        this.retail_id = retail_id;
+    public String getReference_id() {
+        return reference_id;
     }
 
-    public String getRetail_name() {
-        return retail_name;
+    public void setReference_id(String reference_id) {
+        this.reference_id = reference_id;
     }
 
-    public void setRetail_name(String retail_name) {
-        this.retail_name = retail_name;
+    public String getRetailer_name() {
+        return retailer_name;
     }
 
-    public HashMap<Integer, ArrayList<Product>> getRetail_products() {
-        return retail_products;
+    public void setRetailer_name(String retailer_name) {
+        this.retailer_name = retailer_name;
     }
 
-    public void setRetail_products(int id, ArrayList<Product> retail_products) {
-        this.retail_products.put(id,retail_products);
+    public String getContact_mail() {
+        return contact_mail;
     }
+
+    public void setContact_mail(String contact_mail) {
+        this.contact_mail = contact_mail;
+    }
+
+    public String getContact_mobile_no() {
+        return contact_mobile_no;
+    }
+
+    public void setContact_mobile_no(String contact_mobile_no) {
+        this.contact_mobile_no = contact_mobile_no;
+    }
+
+    @Column(name = "reference_id")
+    public String reference_id;
+
+    @Column(name = "name")
+    public String retailer_name;
+
+    @Column(name = "contact_mail")
+    public String contact_mail;
+
+    @Column(name = "contact_mobile_no")
+    public String contact_mobile_no;
+
+
+
 }

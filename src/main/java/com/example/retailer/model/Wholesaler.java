@@ -6,7 +6,7 @@ public class Wholesaler {
 
     int wholesale_id;
     String wholesale_name;
-    ArrayList<Product> wholesale_products =new ArrayList<Product>();;
+    ArrayList<Product> wholesale_products;
 
 
    public Wholesaler() {
@@ -15,7 +15,7 @@ public class Wholesaler {
     public Wholesaler(int id, String name, ArrayList<Product> wholesalerList) {
         this.wholesale_id = id;
         this.wholesale_name = name;
-        this.wholesale_products = new ArrayList<Product>();
+        this.wholesale_products = wholesalerList;
     }
 
     public int getWholesale_id() {

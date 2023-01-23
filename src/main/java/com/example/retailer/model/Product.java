@@ -1,28 +1,23 @@
 package com.example.retailer.model;
 
-public class Product {
-     int proId;
-     String proName;
-     int stock;
-     int price;
-     int gstPercentage;
-//    NavigableMap<Integer,Integer> discount=new TreeMap<Integer, Integer>();
 
-   public Product(){}
-   public Product(int id, String name, int sto, int pri,int gst){
-        this.proId = id;
-        this.proName = name;
-        this.stock = sto;
-        this.price = pri;
-        this.gstPercentage = gst;
+
+public class Product {
+    public int getId() {
+        return id;
+    }
+    public Product(){}
+
+
+    public void setId(int id) {
+        this.id = id;
     }
 
-
-    public int getProId() {
+    public String getProId() {
         return proId;
     }
 
-    public void setProId(int proId) {
+    public void setProId(String proId) {
         this.proId = proId;
     }
 
@@ -32,14 +27,6 @@ public class Product {
 
     public void setProName(String proName) {
         this.proName = proName;
-    }
-
-    public int getStock() {
-        return stock;
-    }
-
-    public void setStock(int stock) {
-        this.stock = stock;
     }
 
     public int getPrice() {
@@ -55,6 +42,20 @@ public class Product {
     }
 
     public void setGstPercentage(int gstPercentage) {
+        this.gstPercentage = gstPercentage;
+    }
+
+    public int id;
+    public String proId;
+    public String proName;
+    public int price;
+    public int gstPercentage;
+
+    public Product(int id, String proId, String proName, int price, int gstPercentage) {
+        this.id = id;
+        this.proId = proId;
+        this.proName = proName;
+        this.price = price;
         this.gstPercentage = gstPercentage;
     }
 }
